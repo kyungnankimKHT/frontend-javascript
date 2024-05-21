@@ -11,6 +11,14 @@
         }
         .선택한옵션 {
             border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            padding: 10px 20px;
+        }
+        .선택한옵션:hover {
+            background-color: #333;
+            color: white;
         }
     </style>
   </head>
@@ -28,33 +36,33 @@
 
       <div id="문제2">
         <p>2. 주어진 일에 대해, 당신은 어떤 모습을 보이나요?</p>
-        <div>
-          <div onclick="옵션선택('S')">실제적이고 현실적이다</div>
-          <div onclick="옵션선택('N')">감정적이고 친화적이다</div>
+        <div  class="선택한옵션들">
+          <div  class="선택한옵션"  onclick="옵션선택('S')">실제적이고 현실적이다</div>
+          <div  class="선택한옵션" onclick="옵션선택('N')">감정적이고 친화적이다</div>
         </div>
       </div>
 
       <div id="문제3">
         <p>3. 변화에 대처할 때, 당신은 어떻게 행동하나요?</p>
-        <div>
-          <div onclick="옵션선택('T')">논리적이고 분석적이다</div>
-          <div onclick="옵션선택('F')">창의적이고 비전을 갖는다</div>
+        <div class="선택한옵션들">
+          <div class="선택한옵션" onclick="옵션선택('T')">논리적이고 분석적이다</div>
+          <div class="선택한옵션" onclick="옵션선택('F')">창의적이고 비전을 갖는다</div>
         </div>
       </div>
 
       <div id="문제4">
         <p>4. 계획을 세울 때, 당신은 주로 어떤 방식을 사용하나요?</p>
-        <div>
-          <div onclick="옵션선택('J')">계획을 세우고 준비한다</div>
-          <div onclick="옵션선택('P')">융통성 있게 대처한다</div>
+        <div class="선택한옵션들">
+          <div class="선택한옵션" onclick="옵션선택('J')">계획을 세우고 준비한다</div>
+          <div class="선택한옵션" onclick="옵션선택('P')">융통성 있게 대처한다</div>
         </div>
       </div>
 
       <div id="문제5">
         <p>5. 스트레스 상황에서 당신은 보통 어떤 행동을하나요?</p>
-        <div>
-            <div onclick="옵션선택('E')">사람들과 소통한다</div>
-            <div onclick="옵션선택('I')">혼자서 시간을 보낸다</div>
+        <div class="선택한옵션들">
+            <div class="선택한옵션" onclick="옵션선택('E')">사람들과 소통한다</div>
+            <div class="선택한옵션" onclick="옵션선택('I')">혼자서 시간을 보낸다</div>
         </div>
       </div>
 
