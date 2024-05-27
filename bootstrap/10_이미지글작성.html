@@ -11,6 +11,12 @@
         crossorigin="anonymous"
       />
       <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+      <style>
+        .이미지프리뷰 {
+            width: 200px;
+            margin: 5px;
+        }
+      </style>
     </head>
     <body>
         <!-- 네비게이션 -->
@@ -56,6 +62,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">내용</label>
+                <!--                   rows = 가로(행)가 5개   cols 16px * 20 가로 넓이 -->
                 <textarea class="form-control" rows="5" cols="20" required></textarea>
             </div>
             <div class="mb-3">
@@ -70,6 +77,29 @@
         <!-- footer 추가하기 -->
         <script>
             //이미지 여러장 보여주는 for문 추가
+            $("#이미지가져오기").change(function() {
+                const 파일들 = this.files; //input 에서 선택한 이미지들 가져오기
+
+                //이미지 미리보기 div 비우기 -> 다시 이미지를 선택했을 경우 초기화하고
+                //새로 선택한 이미지들 표시하기 위해 작성
+                $("#이미지미리보기").empty();
+
+                //만약에 이미지를 가져온 것이 존재한다면
+                if(파일들) {
+                    for(let i = 0; i < 파일들.length; i++) {
+                        const file = 파일들[i];
+                        const 파일읽기 = new FileReader();
+
+                        //파일을 가져오면 파일을 읽고 보여주기 시작
+                        파일읽기.onload = function(e) {
+                            const 이미지태그생성 = $('<img>').attr('src',e.target.result).addClass('이미지프리뷰');
+                            $("#이미지미리보기").append(이미지태그생성);
+                        }
+                        //최종으로 사람들 눈에 이미지들 보여지게 만들어줌
+                        파일읽기.readAsDataURL(file);
+                    }
+                }
+            })
         </script>
     </body>
 </html>
